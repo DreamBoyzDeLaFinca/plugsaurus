@@ -1,0 +1,553 @@
+{
+  "_info": "Catalogo de PlugSaurus. La web genera tarjetas y paginas leyendo este archivo. Guia completa en README.md (seccion 'Anadir un plugin').",
+  "products": [
+    {
+      "id": "velocivoice",
+      "name": "VelociVoice",
+      "tagline": "One plugin. Record. Done.",
+      "description": "All-in-one vocal plugin: tuning, compressor, saturation, doubler, delay and reverb. Load a preset, hit record, sound finished.",
+      "longDescription": [
+        "Stop stacking 6 plugins on your vocal. VelociVoice puts everything your voice needs in one plugin, made to record yourself and sound finished from the first take.",
+        "Load it on your vocal track, pick a preset and record: you hear yourself with tuning, compression and effects in real time, with only about 4 ms of delay."
+      ],
+      "price": 27.99,
+      "currency": "USD",
+      "type": "PREMIUM",
+      "category": "Vocals",
+      "image": "assets/img/products/velocivoice-thumb.webp",
+      "cover": "assets/img/products/velocivoice-cover.webp",
+      "gallery": [
+        "assets/img/products/velocivoice-cover.webp",
+        "assets/img/products/velocivoice-ui.webp",
+        "assets/img/products/velocivoice-inside.webp"
+      ],
+      "videos": [
+        {
+          "src": "assets/video/velocivoice-ba-trap-lead.mp4",
+          "poster": "assets/video/velocivoice-ba-trap-lead.jpg",
+          "title": "Before / after · TRAP LEAD",
+          "vertical": true
+        },
+        {
+          "src": "assets/video/velocivoice-ba-clean-lead.mp4",
+          "poster": "assets/video/velocivoice-ba-clean-lead.jpg",
+          "title": "Before / after · CLEAN LEAD",
+          "vertical": true
+        },
+        {
+          "src": "assets/video/velocivoice-ba-hype-adlib.mp4",
+          "poster": "assets/video/velocivoice-ba-hype-adlib.jpg",
+          "title": "Before / after · HYPE ADLIB",
+          "vertical": true
+        },
+        {
+          "src": "assets/video/velocivoice-ba-choir-wash.mp4",
+          "poster": "assets/video/velocivoice-ba-choir-wash.jpg",
+          "title": "Before / after · CHOIR WASH",
+          "vertical": true
+        }
+      ],
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/velocivoice",
+      "gumroadPermalink": "velocivoice",
+      "compatibility": {
+        "os": [
+          "Windows 10/11 (64-bit)",
+          "macOS 11 Big Sur or later (Intel & Apple Silicon M1–M4)"
+        ],
+        "formats": [
+          "VST3",
+          "AU (Mac)"
+        ],
+        "daws": [
+          "Logic Pro",
+          "GarageBand",
+          "Ableton Live",
+          "FL Studio",
+          "Cubase",
+          "Studio One",
+          "Reaper",
+          "Bitwig"
+        ]
+      },
+      "features": [
+        "RaptorTune built in: one wheel from natural to hard robot tuning, plus XTREME",
+        "Compressor with automatic de-esser",
+        "Saturation, from warm to distorted",
+        "Modulation: doubler, chorus or flanger",
+        "Delay synced to your tempo (1/4, 1/8, 1/8 dotted, 1/16)",
+        "Reverb: room, plate or hall",
+        "12 presets: 4 lead, 4 backing, 4 adlib, all level-matched",
+        "About 4 ms of latency: record while you hear yourself with the effect",
+        "Safety limiter: it never clips"
+      ],
+      "license": "One license = up to 2 computers. Internet needed only once, to activate.",
+      "notes": [
+        "Mac: the installer is not notarized yet. If macOS blocks it, go to System Settings → Privacy & Security → Open Anyway."
+      ],
+      "freeVersion": "velocivoice-lite",
+      "status": "published",
+      "featured": true,
+      "accent": "#39ff5a",
+      "order": 1
+    },
+    {
+      "id": "stomposaurus",
+      "name": "STOMPOSAURUS",
+      "tagline": "The T-Rex clipper for kicks, 808s & drum buses.",
+      "description": "Clipper for louder kicks, 808s and drum buses. Every hit it clips, the T-Rex stomps — and the sub stays untouched.",
+      "longDescription": [
+        "STOMPOSAURUS is a clipper made for modern trap, drill and hip-hop drums. Push your drums into the ceiling and get serious loudness and punch, while Sub Armor keeps the low end clean. Only the punch gets stomped, and that's what people hear on phones and laptops.",
+        "Every hit that actually gets clipped, a T-Rex foot stomps it on screen. You see exactly what the clipper is doing."
+      ],
+      "price": 7.99,
+      "currency": "USD",
+      "type": "PREMIUM",
+      "category": "Clipper",
+      "image": "assets/img/products/stomposaurus-thumb.webp",
+      "cover": "assets/img/products/stomposaurus-cover.webp",
+      "gallery": [
+        "assets/img/products/stomposaurus-cover.webp",
+        "assets/img/products/stomposaurus-post.webp"
+      ],
+      "videos": [
+        {
+          "src": "assets/video/stomposaurus-reel1.mp4",
+          "poster": "assets/video/stomposaurus-reel1.jpg",
+          "title": "STOMP off / STOMP on",
+          "vertical": true
+        },
+        {
+          "src": "assets/video/stomposaurus-reel2.mp4",
+          "poster": "assets/video/stomposaurus-reel2.jpg",
+          "title": "Wake the T-Rex",
+          "vertical": true
+        }
+      ],
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/stomposaurus",
+      "gumroadPermalink": "stomposaurus",
+      "compatibility": {
+        "os": [
+          "Windows (64-bit)",
+          "macOS (Intel & Apple Silicon)"
+        ],
+        "formats": [
+          "VST3",
+          "AU (Mac)"
+        ],
+        "daws": [
+          "Ableton Live",
+          "FL Studio",
+          "Logic Pro",
+          "Cubase",
+          "Studio One",
+          "Reaper",
+          "Bitwig"
+        ]
+      },
+      "features": [
+        "STOMP: drive up to +18 dB into the ceiling",
+        "SHAPE: from Bronto (soft, round) to Raptor (hard, aggressive)",
+        "CEILING: set your maximum output from -12 to 0 dBFS",
+        "SUB ARMOR + ARMOR LINE: everything below the line (30–150 Hz) passes clean",
+        "MIX: parallel clipping, from dry to fully stomped",
+        "NO CHEATING: level-matched comparison, judge the sound and not the volume",
+        "HARD CEILING: the output never goes above your ceiling",
+        "4x oversampling on all clipping, light on CPU",
+        "11 factory presets for kick, 808, drums and master — save your own",
+        "Resizable dark fantasy interface (75–150 %)"
+      ],
+      "license": "One license, up to 2 computers. Everything you make with it is 100 % yours, royalty-free. Early access (v0.9): free updates for buyers.",
+      "notes": [],
+      "freeVersion": "stomposaurus-lite",
+      "status": "published",
+      "featured": true,
+      "accent": "#ff7a1a",
+      "order": 2
+    },
+    {
+      "id": "stegoburn",
+      "name": "STEGOBURN",
+      "tagline": "The stegosaurus saturator for 808s & vocals.",
+      "description": "Saturator for trap, drill and R&B. Make your 808 hit on every speaker — without wrecking the sub.",
+      "longDescription": [
+        "STEGOBURN is a saturator built for trap, drill and R&B. Turn up RAGE and the stegosaurus wakes up, gets angry and finally bursts into flames, while your 808 grows the harmonics that make it audible on phones, laptops and earbuds."
+      ],
+      "price": 14.99,
+      "currency": "USD",
+      "type": "PREMIUM",
+      "category": "Saturation",
+      "image": "assets/img/products/stegoburn-thumb.webp",
+      "cover": "assets/img/products/stegoburn-cover.webp",
+      "gallery": [
+        "assets/img/products/stegoburn-cover.webp",
+        "assets/img/products/stegoburn-moods.webp"
+      ],
+      "videos": [
+        {
+          "src": "assets/video/stegoburn-reel1.mp4",
+          "poster": "assets/video/stegoburn-reel1.jpg",
+          "title": "Phone speaker test",
+          "vertical": true
+        },
+        {
+          "src": "assets/video/stegoburn-reel2.mp4",
+          "poster": "assets/video/stegoburn-reel2.jpg",
+          "title": "Feed the Stego",
+          "vertical": true
+        }
+      ],
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/stegoburn",
+      "gumroadPermalink": "stegoburn",
+      "compatibility": {
+        "os": [
+          "Windows 10/11 (64-bit)"
+        ],
+        "formats": [
+          "VST3"
+        ],
+        "daws": [
+          "Ableton Live",
+          "FL Studio",
+          "Cubase",
+          "Studio One",
+          "Reaper",
+          "Bitwig",
+          "Any VST3 host"
+        ]
+      },
+      "features": [
+        "RAGE: how hard it burns",
+        "LEASH: dry/wet blend for parallel saturation",
+        "Three moods: PURR (warm tape), GROWL (tube bite), ROAR (hard clip)",
+        "SUB ARMOR: everything below the ARMOR LINE (40–250 Hz) stays clean",
+        "NO CHEATING: automatic gain matching",
+        "SPARKLE (tone) and LOUDNESS (output) secret settings",
+        "4x linear-phase oversampling for clean, alias-free distortion",
+        "Under 1 ms latency — safe for tracking, low CPU",
+        "13 presets for 808s, vocals, drums and mix bus"
+      ],
+      "license": "Your license key activates STEGOBURN on up to 2 computers. Without activation it runs in demo mode (a short silence every 45 seconds).",
+      "notes": [],
+      "freeVersion": "stegoburn-lite",
+      "status": "published",
+      "featured": true,
+      "accent": "#ff2a3d",
+      "order": 3
+    },
+    {
+      "id": "raptortune",
+      "name": "RaptorTune",
+      "tagline": "Hard, modern vocal tuning. One wheel.",
+      "description": "Hard, modern vocal tuning with one big wheel. From natural correction to the robotic trap sound, plus XTREME mode.",
+      "longDescription": [
+        "RaptorTune snaps your vocal to the key of your song. Turn one big wheel from NATURAL (gentle correction) to ROBOT (the hard, modern sound), and push XTREME when ROBOT is not enough."
+      ],
+      "price": 7.99,
+      "currency": "USD",
+      "type": "PREMIUM",
+      "category": "Vocals",
+      "image": "assets/img/products/raptortune-thumb.webp",
+      "cover": "assets/img/products/raptortune-cover.webp",
+      "gallery": [
+        "assets/img/products/raptortune-cover.webp",
+        "assets/img/products/raptortune-ui.webp",
+        "assets/img/products/raptortune-inside.webp"
+      ],
+      "videos": [],
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/raptortune",
+      "gumroadPermalink": "raptortune",
+      "compatibility": {
+        "os": [
+          "Windows 10/11 (64-bit)",
+          "macOS 11 Big Sur or later (Intel & Apple Silicon M1–M4)"
+        ],
+        "formats": [
+          "VST3",
+          "AU (Mac)"
+        ],
+        "daws": [
+          "Logic Pro",
+          "GarageBand",
+          "Ableton Live",
+          "FL Studio",
+          "Cubase",
+          "Studio One",
+          "Reaper",
+          "Bitwig"
+        ]
+      },
+      "features": [
+        "One big wheel: NATURAL to ROBOT",
+        "XTREME mode: drier note jumps, metallic tone, glitchy note changes",
+        "Key & scale: set it once and it follows the song",
+        "Live note display: see the note you sing and where it lands",
+        "Formant: make the voice darker or brighter",
+        "Humanize & Flex: keep slides and vibrato natural when you want",
+        "Clean lows: no boomy bass on deep voices",
+        "Voice range (low / mid / high) and mix control"
+      ],
+      "license": "One license = up to 2 computers. Internet needed only once to activate.",
+      "notes": [
+        "Also built into VelociVoice."
+      ],
+      "freeVersion": null,
+      "status": "coming-soon",
+      "featured": false,
+      "accent": "#39ff5a",
+      "order": 4
+    },
+    {
+      "id": "stomposaurus-lite",
+      "name": "STOMPOSAURUS Lite",
+      "tagline": "Louder kicks and 808s in seconds, for free.",
+      "description": "The heart of STOMPOSAURUS: push your drums into the ceiling and watch the T-Rex stomp every hit it clips. Free forever.",
+      "longDescription": [
+        "STOMPOSAURUS Lite gives you the heart of STOMPOSAURUS: push your drums into the ceiling and watch the T-Rex stomp every hit it clips. Sub Armor is always on, so your 808 keeps its weight and only the punch gets stomped."
+      ],
+      "price": 0,
+      "currency": "USD",
+      "type": "FREE",
+      "category": "Clipper",
+      "image": "assets/img/products/stomposaurus-lite-thumb.webp",
+      "cover": "assets/img/products/stomposaurus-lite-cover.webp",
+      "gallery": [
+        "assets/img/products/stomposaurus-lite-cover.webp"
+      ],
+      "videos": [
+        {
+          "src": "assets/video/stomposaurus-reel1.mp4",
+          "poster": "assets/video/stomposaurus-reel1.jpg",
+          "title": "STOMP off / STOMP on",
+          "vertical": true
+        }
+      ],
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/stomposaurus-lite",
+      "gumroadPermalink": "stomposaurus-lite",
+      "compatibility": {
+        "os": [
+          "Windows (64-bit)",
+          "macOS (Intel & Apple Silicon)"
+        ],
+        "formats": [
+          "VST3",
+          "AU (Mac)"
+        ],
+        "daws": [
+          "Ableton Live",
+          "FL Studio",
+          "Logic Pro",
+          "Cubase",
+          "Studio One",
+          "Reaper",
+          "Bitwig"
+        ]
+      },
+      "features": [
+        "STOMP: drive up to +18 dB into the ceiling",
+        "SHAPE: from Bronto (soft) to Raptor (hard)",
+        "Safe ceiling at -0.3 dB with Hard Ceiling always on",
+        "Sub Armor always on at 70 Hz",
+        "5 factory presets, including Drill Kick Snap and Trap 808 Punch",
+        "4x oversampling and the full dark fantasy interface"
+      ],
+      "license": "Free forever. Pay what you want if you'd like to support PlugSaurus.",
+      "notes": [],
+      "fullVersion": "stomposaurus",
+      "status": "published",
+      "featured": true,
+      "accent": "#ff7a1a",
+      "order": 10
+    },
+    {
+      "id": "stegoburn-lite",
+      "name": "STEGOBURN Lite",
+      "tagline": "Free saturator that makes your 808 hit on phone speakers.",
+      "description": "RAGE + LEASH: two moves, instant grit. GROWL mood with Sub Armor always on. Free forever.",
+      "longDescription": [
+        "Turn up RAGE for instant grit and blend it in with LEASH. GROWL mood runs with SUB ARMOR always on: your sub stays clean while the harmonics cut through phones, laptops and earbuds."
+      ],
+      "price": 0,
+      "currency": "USD",
+      "type": "FREE",
+      "category": "Saturation",
+      "image": "assets/img/products/stegoburn-lite-thumb.webp",
+      "cover": "assets/img/products/stegoburn-lite-cover.webp",
+      "gallery": [
+        "assets/img/products/stegoburn-lite-cover.webp"
+      ],
+      "videos": [
+        {
+          "src": "assets/video/stegoburn-reel1.mp4",
+          "poster": "assets/video/stegoburn-reel1.jpg",
+          "title": "Phone speaker test",
+          "vertical": true
+        }
+      ],
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/stegoburn-lite",
+      "gumroadPermalink": "stegoburn-lite",
+      "compatibility": {
+        "os": [
+          "Windows 10/11 (64-bit)"
+        ],
+        "formats": [
+          "VST3"
+        ],
+        "daws": [
+          "Ableton Live",
+          "FL Studio",
+          "Cubase",
+          "Studio One",
+          "Reaper",
+          "Bitwig",
+          "Any VST3 host"
+        ]
+      },
+      "features": [
+        "RAGE: how hard it burns",
+        "LEASH: dry/wet blend",
+        "GROWL mood with SUB ARMOR always on",
+        "3 presets",
+        "Free forever"
+      ],
+      "license": "Free forever. Pay what you want if you'd like to support PlugSaurus.",
+      "notes": [],
+      "fullVersion": "stegoburn",
+      "status": "published",
+      "featured": true,
+      "accent": "#ff2a3d",
+      "order": 11
+    },
+    {
+      "id": "velocivoice-lite",
+      "name": "VelociVoice Lite",
+      "tagline": "Free full trial: every feature unlocked.",
+      "description": "Try every feature of VelociVoice for free. Full plugin: just a short silence every 45 seconds until you unlock it.",
+      "longDescription": [
+        "Hear it on your own voice before you buy. This is the complete VelociVoice: tuning, compressor, saturation, doubler, delay, reverb and all 12 presets. Nothing is locked or removed.",
+        "The only limit: the sound goes silent for 1 second every 45 seconds. Like it? Get the full license, paste the key in the plugin (DEMO - ACTIVATE) and the silences disappear. No reinstall needed."
+      ],
+      "price": 0,
+      "currency": "USD",
+      "type": "FREE",
+      "badge": "TRIAL",
+      "category": "Vocals",
+      "image": "assets/img/products/velocivoice-trial-thumb.webp",
+      "cover": "assets/img/products/velocivoice-trial-cover.webp",
+      "gallery": [
+        "assets/img/products/velocivoice-trial-cover.webp",
+        "assets/img/products/velocivoice-ui.webp"
+      ],
+      "videos": [
+        {
+          "src": "assets/video/velocivoice-ba-trap-lead.mp4",
+          "poster": "assets/video/velocivoice-ba-trap-lead.jpg",
+          "title": "Before / after · TRAP LEAD",
+          "vertical": true
+        },
+        {
+          "src": "assets/video/velocivoice-ba-hype-adlib.mp4",
+          "poster": "assets/video/velocivoice-ba-hype-adlib.jpg",
+          "title": "Before / after · HYPE ADLIB",
+          "vertical": true
+        }
+      ],
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/velocivoice-lite",
+      "gumroadPermalink": "velocivoice-lite",
+      "compatibility": {
+        "os": [
+          "Windows 10/11 (64-bit)",
+          "macOS 11 Big Sur or later (Intel & Apple Silicon M1–M4)"
+        ],
+        "formats": [
+          "VST3",
+          "AU (Mac)"
+        ],
+        "daws": [
+          "Logic Pro",
+          "GarageBand",
+          "Ableton Live",
+          "FL Studio",
+          "Cubase",
+          "Studio One",
+          "Reaper",
+          "Bitwig"
+        ]
+      },
+      "features": [
+        "The complete VelociVoice: nothing locked or removed",
+        "RaptorTune built in: natural to hard robotic tuning, plus XTREME mode",
+        "Compressor with de-esser · Saturation · Doubler / chorus / flanger",
+        "Tempo-synced delay · Room / plate / hall reverb",
+        "12 presets: lead, backing, adlib",
+        "Only limit: 1 second of silence every 45 seconds"
+      ],
+      "license": "Free. Pay what you want if you'd like to support PlugSaurus.",
+      "notes": [
+        "Mac: the installer is not notarized yet. If macOS blocks it, go to System Settings → Privacy & Security → Open Anyway."
+      ],
+      "fullVersion": "velocivoice",
+      "status": "published",
+      "featured": false,
+      "accent": "#39ff5a",
+      "order": 12
+    },
+    {
+      "id": "pteroverb",
+      "name": "PTEROVERB",
+      "tagline": "Free reverb by PlugSaurus.",
+      "description": "Reverb by PlugSaurus with space, color and modulation controls and 16 presets.",
+      "longDescription": [
+        "PTEROVERB is a free reverb by PlugSaurus. Shape the space, color the tail and blend it in with one big DRY / WET wheel while the pterodactyl spreads its wings."
+      ],
+      "price": 0,
+      "currency": "USD",
+      "type": "FREE",
+      "category": "Reverb",
+      "image": "assets/img/products/pteroverb-thumb.webp",
+      "cover": "assets/img/products/pteroverb-cover.webp",
+      "gallery": [
+        "assets/img/products/pteroverb-cover.webp",
+        "assets/img/products/pteroverb-ui.webp"
+      ],
+      "videos": [
+        {
+          "src": "assets/video/pteroverb-wings.mp4",
+          "poster": "assets/video/pteroverb-wings.jpg",
+          "title": "Wings open, wings close",
+          "vertical": false
+        }
+      ],
+      "gumroadUrl": "",
+      "gumroadPermalink": "",
+      "compatibility": {
+        "os": [
+          "Windows (64-bit)",
+          "macOS"
+        ],
+        "formats": [
+          "VST3"
+        ],
+        "daws": [
+          "Ableton Live",
+          "FL Studio",
+          "Any VST3 host"
+        ]
+      },
+      "features": [
+        "SPACE: size, decay, pre-delay and width",
+        "COLOR: damping, tone, low cut and high cut",
+        "Modulation",
+        "Big DRY / WET wheel and output control",
+        "Input and output meters",
+        "A/B compare",
+        "16 presets"
+      ],
+      "license": "Free.",
+      "notes": [],
+      "status": "coming-soon",
+      "featured": false,
+      "accent": "#29e3ff",
+      "order": 13
+    }
+  ]
+}

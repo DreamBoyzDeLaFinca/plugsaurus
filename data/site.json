@@ -1,0 +1,35 @@
+{
+  "_info": "Configuracion general de la web: redes sociales, tienda y sincronizacion con Gumroad.",
+  "brand": "PlugSaurus",
+  "siteUrl": "",
+  "tagline": "Audio plugins with teeth.",
+  "about": "Creative audio plugins designed for producers who want to shape their sound, improve their workflow and push their music further. Built for producers. Made for sound.",
+  "social": {
+    "instagram": {
+      "label": "Instagram",
+      "handle": "@plug.saurus",
+      "url": "https://www.instagram.com/plug.saurus/"
+    },
+    "gumroad": {
+      "label": "Gumroad",
+      "handle": "dreamboyz.gumroad.com",
+      "url": "https://dreamboyz.gumroad.com/"
+    }
+  },
+  "gumroad": {
+    "storeUrl": "https://dreamboyz.gumroad.com/",
+    "buyParams": "",
+    "sync": {
+      "enabled": true,
+      "file": "data/gumroad-sync.json",
+      "addNewProducts": true,
+      "updateFields": [
+        "name",
+        "price",
+        "currency",
+        "status",
+        "gumroadUrl"
+      ]
+    }
+  }
+}
