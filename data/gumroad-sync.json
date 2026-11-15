@@ -1,4 +1,94 @@
 {
   "_info": "Generado automaticamente por tools/sync_gumroad.py. No editar a mano.",
-  "products": []
+  "updatedAt": "2026-11-15T20:49:31+00:00",
+  "products": [
+    {
+      "gumroadId": "2aYfP3X_JYTIanREJbqgSQ==",
+      "gumroadPermalink": "raptortune-lite",
+      "name": "RaptorTune Lite",
+      "description": "Hear it on your own voice before you buy.",
+      "price": 0.0,
+      "currency": "USD",
+      "status": "draft",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/raptortune-lite",
+      "image": "https://public-files.gumroad.com/37ux964qee1z6zihi78uvn8bodgr"
+    },
+    {
+      "gumroadId": "Xs7LeuvsO5wRzDx5e6VpvA==",
+      "gumroadPermalink": "raptortune",
+      "name": "RaptorTune",
+      "description": "That hard trap tune. One wheel.",
+      "price": 7.99,
+      "currency": "USD",
+      "status": "draft",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/raptortune",
+      "image": "https://public-files.gumroad.com/ilpwnnulw7d8qwtahqhkxlieni0b"
+    },
+    {
+      "gumroadId": "05E3IHdrvMDsyIgJ7lyhGA==",
+      "gumroadPermalink": "velocivoice-lite",
+      "name": "VelociVoice Lite",
+      "description": "Hear it on your own voice before you buy.",
+      "price": 0.0,
+      "currency": "USD",
+      "status": "published",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/velocivoice-lite",
+      "image": "https://public-files.gumroad.com/4dpqfm1v7fn6ckbfpqczotllhy9j"
+    },
+    {
+      "gumroadId": "royO2p8MtlAwoHMjvhfB0Q==",
+      "gumroadPermalink": "velocivoice",
+      "name": "VelociVoice",
+      "description": "VelociVoice is an all-in-one vocal plugin. Load it on your vocal track, pick a preset and record: you hear yourself with tuning, compression and effects in real time, with only about 4 ms of delay.",
+      "price": 27.99,
+      "currency": "USD",
+      "status": "published",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/velocivoice",
+      "image": "https://public-files.gumroad.com/wfxo06cofn62327yclpt61bw2dwt"
+    },
+    {
+      "gumroadId": "dmTp9zFcRDQqL_fmSWaUsQ==",
+      "gumroadPermalink": "stegoburn-lite",
+      "name": "STEGOBURN Lite",
+      "description": "Free saturator that makes your 808 hit on phone speakers.",
+      "price": 0.0,
+      "currency": "USD",
+      "status": "published",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/stegoburn-lite",
+      "image": "https://public-files.gumroad.com/zvbbjrrmnf9kcmfawopt3p9vz7tq"
+    },
+    {
+      "gumroadId": "gLp2AtiETveNXhG2rtZMYg==",
+      "gumroadPermalink": "stegoburn",
+      "name": "STEGOBURN",
+      "description": "Make your 808 hit on every speaker – without wrecking the sub.",
+      "price": 14.99,
+      "currency": "USD",
+      "status": "published",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/stegoburn",
+      "image": "https://public-files.gumroad.com/nrzw0gf9478spxzn57gbyt17wh1u"
+    },
+    {
+      "gumroadId": "L_dDnQkRbNmZmgsTKbvlSw==",
+      "gumroadPermalink": "stomposaurus-lite",
+      "name": "STOMPOSAURUS Lite",
+      "description": "Louder kicks and 808s in seconds, for free.",
+      "price": 0.0,
+      "currency": "USD",
+      "status": "published",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/stomposaurus-lite",
+      "image": "https://public-files.gumroad.com/eva03pakb56ljjkw1wf93h8lv657"
+    },
+    {
+      "gumroadId": "rENhnqD53fbJk38BCANShQ==",
+      "gumroadPermalink": "stomposaurus",
+      "name": "STOMPOSAURUS",
+      "description": "STOMPOSAURUS — The T-Rex Clipper",
+      "price": 7.99,
+      "currency": "USD",
+      "status": "published",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/stomposaurus",
+      "image": "https://public-files.gumroad.com/pwdpwsn95fk9zmcyzyxuz82b4p9l"
+    }
+  ]
 }
