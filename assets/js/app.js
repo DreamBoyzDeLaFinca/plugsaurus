@@ -91,6 +91,7 @@
     const ig = site.social && site.social.instagram;
     const nav = [
       ["index.html", "Home", "home"],
+      ["plugin.html?id=velocivoice", "VelociVoice", "vv"],
       ["plugins.html", "Plugins", "catalog"],
       ["free.html", "Free plugins", "free"],
       ["index.html#about", "About", "about"]
@@ -108,7 +109,7 @@
         </ul>
         <div class="nav-cta">
           ${ig && ig.url ? `<a class="icon-btn" href="${esc(ig.url)}" target="_blank" rel="noopener" aria-label="PlugSaurus on Instagram">${ICONS.ig}</a>` : ""}
-          <a class="btn btn-primary btn-sm hide-sm" href="plugins.html">Explore</a>
+          <a class="btn btn-primary btn-sm hide-sm" data-buy="velocivoice" href="plugin.html?id=velocivoice">Get VelociVoice</a>
           <button class="icon-btn menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">${ICONS.menu}</button>
         </div>
       </div>`;
@@ -181,19 +182,77 @@
       <div><strong>VST3 · AU</strong><span>Win & Mac</span></div>`;
 
     const f = $("#featured-grid");
-    if (f) f.innerHTML = (featured.length ? featured : premium).map((p) => card(p, site)).join("");
+    const others = premium.filter((p) => p.id !== "velocivoice");
+    if (f) f.innerHTML = others.map((p) => card(p, site)).join("");
     const fr = $("#free-grid");
     if (fr) fr.innerHTML = featuredFree.slice(0, 4).map((p) => card(p, site)).join("");
 
     const mq = $("#marquee");
     if (mq) {
-      const items = products.map((p) => `<span>${esc(p.name)}</span>`).join("") + "<span>Record yourself</span><span>Trap</span><span>Drill</span><span>Phonk</span><span>No mixing degree needed</span>";
+      const items = ["One plugin", "Complete vocal chain", "Lead", "Backing", "Adlib", "Hear yourself while you record", "No mixing degree needed"]
+        .concat(products.map((p) => p.name)).map((t) => `<span>${esc(t)}</span>`).join("");
       mq.innerHTML = items + items;
     }
     const eq = $(".eq");
     if (eq) eq.innerHTML = Array.from({ length: 22 }, (_, i) => `<i style="height:${30 + ((i * 37) % 70)}%;animation-delay:-${((i * 0.27) % 1.4).toFixed(2)}s"></i>`).join("");
     renderFollow(site);
+    homeSticky();
   }
+
+  // Barra de compra fija en movil: aparece al pasar el hero y se oculta en el CTA final
+  function homeSticky() {
+    const bar = $("#home-sticky"), hero = $(".vv-hero"), fin = $(".final-cta");
+    if (!bar || !hero || !("IntersectionObserver" in window)) return;
+    bar.hidden = false; document.body.classList.add("has-sticky");
+    let pastHero = false, atFinal = false;
+    const upd = () => bar.classList.toggle("show", pastHero && !atFinal);
+    new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; upd(); }).observe(hero);
+    if (fin) new IntersectionObserver(([e]) => { atFinal = e.isIntersecting; upd(); }).observe(fin);
+  }
+
+  /* ---------- enlaces y precios desde products.json ----------
+     <a data-buy="id">      -> enlace de Gumroad del producto (o su ficha si no esta disponible)
+     <span data-price="id"> -> precio formateado                                               */
+  function bindProductRefs(site, products) {
+    const byId = Object.fromEntries(products.map((p) => [p.id, p]));
+    $$("[data-buy]").forEach((a) => {
+      const p = byId[a.dataset.buy];
+      if (!p) { a.hidden = true; return; }
+      if (p.isAvailable) { a.href = buyUrl(p, site); a.target = "_blank"; a.rel = "noopener"; }
+      else a.href = productUrl(p);
+    });
+    $$("[data-price]").forEach((el) => { const p = byId[el.dataset.price]; if (p) el.textContent = formatPrice(p); });
+  }
+
+  /* ---------- FAQ (desde products.json -> faq) ---------- */
+  function faqHTML(faq) {
+    return faq.map((f, i) => `
+      <details class="faq-item"${i === 0 ? " open" : ""}>
+        <summary><span>${esc(f.q)}</span><i aria-hidden="true"></i></summary>
+        <p>${esc(f.a)}</p>
+      </details>`).join("");
+  }
+  function faqLD(faq) {
+    const s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) });
+    document.head.appendChild(s);
+  }
+  function renderFaqBlocks(products) {
+    $$("[data-faq]").forEach((el) => {
+      const p = products.find((x) => x.id === el.dataset.faq);
+      if (!p || !p.faq || !p.faq.length) { const sec = el.closest("section"); if (sec) sec.hidden = true; return; }
+      el.innerHTML = faqHTML(p.faq);
+      faqLD(p.faq);
+    });
+  }
+
+  // Solo un video sonando a la vez
+  document.addEventListener("play", (e) => {
+    if (e.target.tagName !== "VIDEO") return;
+    $$("video").forEach((v) => { if (v !== e.target && !v.paused) v.pause(); });
+  }, true);
 
   function renderFollow(site) {
     const el = $("#follow");
@@ -399,6 +458,15 @@
         </div>
       </section>
 
+      ${p.faq && p.faq.length ? `
+      <section class="section-sm" style="--accent:${esc(accent)}">
+        <div class="container narrow">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="section-title" style="margin-bottom:24px">Questions about ${esc(p.name)}</h2>
+          <div class="faq">${faqHTML(p.faq)}</div>
+        </div>
+      </section>` : ""}
+
       ${related.length ? `
       <section class="section-sm">
         <div class="container">
@@ -433,9 +501,9 @@
   }
 
   function setMeta(p, site) {
-    const title = `${p.name} — ${p.isFree ? "Free " : ""}${p.category} plugin · PlugSaurus`;
+    const title = p.seoTitle || `${p.name} — ${p.isFree ? "Free " : ""}${p.category} plugin · PlugSaurus`;
     document.title = title;
-    const desc = p.description;
+    const desc = p.seoDescription || p.description;
     const abs = (u) => new URL(u, location.href).href;
     const set = (sel, attr, val) => { const m = $(sel); if (m) m.setAttribute(attr, val); };
     set('meta[name="description"]', "content", desc);
@@ -461,6 +529,8 @@
     header(site);
     footer(site, products);
     if (page === "home") renderHome(site, products);
+    bindProductRefs(site, products);
+    renderFaqBlocks(products);
     if (page === "catalog") renderCatalog(site, products);
     if (page === "free") renderFree(site, products);
     if (page === "product") renderProduct(site, products);

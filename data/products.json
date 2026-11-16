@@ -88,7 +88,39 @@
       "status": "published",
       "featured": true,
       "accent": "#39ff5a",
-      "order": 1
+      "order": 1,
+      "seoTitle": "VelociVoice — All-in-one vocal chain plugin for home recording (VST3 / AU)",
+      "seoDescription": "VelociVoice is a vocal chain plugin for recording at home: tuning, compression with de-esser, saturation, doubler, delay and reverb in one plugin, with 12 presets and about 4 ms of latency. VST3 for Windows, VST3 & AU for Mac.",
+      "faq": [
+        {
+          "q": "Do I need mixing experience?",
+          "a": "No. Set the key and scale of your song, pick a LEAD, BACKING or ADLIB preset and record. The 12 presets already include tuning, compression, saturation, delay and reverb. Your DAW keeps the clean voice, so you can change the preset later."
+        },
+        {
+          "q": "Which DAWs are supported?",
+          "a": "Any DAW that loads VST3 plugins on Windows, and VST3 or AU on Mac. It works in Logic Pro, GarageBand, Ableton Live, FL Studio, Cubase, Studio One, Reaper and Bitwig."
+        },
+        {
+          "q": "Can I hear the effects while recording?",
+          "a": "Yes. VelociVoice runs with about 4 ms of latency, so you can monitor your voice with the effect while you record."
+        },
+        {
+          "q": "Is VelociVoice easy to use?",
+          "a": "It's built for people who don't mix: choose a preset, adjust a few big controls if you want, and record. An input meter tells you if your mic is too loud, and a safety limiter keeps it from clipping."
+        },
+        {
+          "q": "Is there a free trial?",
+          "a": "Yes. VelociVoice Lite is the complete plugin with every feature and all 12 presets. The only limit is 1 second of silence every 45 seconds. Paste your license key and the silence disappears, no reinstall needed."
+        },
+        {
+          "q": "Is it compatible with Windows and Mac?",
+          "a": "Yes. Windows 10/11 (64-bit) as VST3, and macOS 11 Big Sur or later on Intel and Apple Silicon (M1–M4) as VST3 and AU. The Mac installer is not notarized yet: if macOS blocks it, go to System Settings → Privacy & Security → Open Anyway."
+        },
+        {
+          "q": "Is it a subscription?",
+          "a": "No. It's a one-time purchase on Gumroad. One license works on up to 2 computers, and you only need internet once, to activate."
+        }
+      ]
     },
     {
       "id": "stomposaurus",
