@@ -187,7 +187,7 @@
 
     const mq = $("#marquee");
     if (mq) {
-      const items = products.map((p) => `<span>${esc(p.name)}</span>`).join("") + "<span>Trap</span><span>Drill</span><span>Phonk</span><span>808s</span>";
+      const items = products.map((p) => `<span>${esc(p.name)}</span>`).join("") + "<span>Record yourself</span><span>Trap</span><span>Drill</span><span>Phonk</span><span>No mixing degree needed</span>";
       mq.innerHTML = items + items;
     }
     const eq = $(".eq");
@@ -204,7 +204,7 @@
         <img src="assets/img/logo-256.webp" alt="PlugSaurus logo" width="88" height="88" loading="lazy">
         <div>
           <h3>Join the herd ${esc(ig.handle || "")}</h3>
-          <p>New plugins, free drops, presets and before/after demos land on Instagram first.</p>
+          <p>Before/after demos, recording tips, free drops and new plugins land on Instagram first.</p>
         </div>
         <a class="btn btn-primary" href="${esc(ig.url)}" target="_blank" rel="noopener">${ICONS.ig} Follow on Instagram</a>
       </div>`;
