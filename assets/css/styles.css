@@ -709,3 +709,5 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: 0; }
 @media (max-width: 900px) { .vv-hero .hero-grid { grid-template-columns: 1fr; } .vv-hero h1 { font-size: clamp(1.55rem, 7.4vw, 2.6rem); } }
 .final-box .hl { color: var(--lime); }
 main { overflow-x: clip; }
+.nav-links a { white-space: nowrap; }
+@media (min-width: 861px) and (max-width: 1100px) { .nav-links a { padding: 8px 10px; } .nav-cta .hide-sm { display: none; } }
