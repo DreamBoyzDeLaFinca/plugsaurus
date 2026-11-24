@@ -7,6 +7,8 @@ name: Sync Gumroad products
 on:
   schedule:
     - cron: "0 6 * * *"
+    # Black Friday 2026: cada hora del 26 al 30 de noviembre (UTC)
+    - cron: "5 * 26-30 11 *"
   workflow_dispatch:
 
 permissions:

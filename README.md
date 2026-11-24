@@ -119,3 +119,10 @@ Coste: 0 €. En repos públicos los minutos de GitHub Actions son gratuitos; la
 - Las páginas de producto se generan en el navegador (`plugin.html?id=…`). Google las indexa, pero si en el futuro quieres URLs tipo `/plugins/stomposaurus/`, se puede añadir un paso de generación estática al mismo workflow.
 - Fuentes: Google Fonts (Chakra Petch + Inter). Si prefieres no cargar nada externo, borra las 3 líneas `fonts.googleapis` de cada HTML y se usará la fuente del sistema.
 - Las imágenes originales nunca se modifican: `prepare_assets.py` solo lee de tus carpetas de marketing y escribe copias optimizadas aquí.
+
+## Promociones con fecha (Black Friday, etc.)
+
+En `data/site.json` → `promos`. Cada promoción tiene `start` y `end` (con zona horaria, p. ej. `+01:00` para España en invierno) y la lista de productos que cambian (`price`, y opcionalmente `regularPrice` para mostrar el precio tachado). La web la **activa y desactiva sola** entre esas fechas: barra superior con cuenta atrás, sección en la home, sello "Black Friday" y botones de descarga gratis. No hace falta publicar nada el día de la promo.
+
+- Vista previa antes de tiempo: añade `?promo=<id>` a la URL, por ejemplo `index.html?promo=black-friday-2026`.
+- Importante: la web solo muestra la oferta. El precio real lo marca Gumroad, así que cambia allí el precio (y publica el producto) a la misma hora.

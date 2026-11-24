@@ -38,6 +38,13 @@
     if (!sym) return val + " " + (p.currency || "");
     return p.currency.toUpperCase() === "EUR" ? val.replace(".", ",") + " €" : sym + val;
   }
+  function priceHTML(p) {
+    if (p.promo) {
+      const was = p.regularPrice > 0 ? ` <s class="was">${formatPrice({ price: p.regularPrice, currency: p.currency })}</s>` : "";
+      return `${formatPrice(p)}${was}<small>${esc(p.promo.label)} only</small>`;
+    }
+    return formatPrice(p) + (p.isFree && p.isAvailable ? "<small>pay what you want</small>" : "");
+  }
   function buyUrl(p, site) {
     if (!p.gumroadUrl) return "";
     const extra = (site.gumroad && site.gumroad.buyParams) || "";
@@ -48,7 +55,8 @@
 
   function badges(p) {
     let html = p.isFree ? '<span class="badge badge-free">Free</span>' : '<span class="badge badge-premium">Premium</span>';
-    if (p.badge) html += `<span class="badge badge-trial">${esc(p.badge)}</span>`;
+    if (p.promo) html += `<span class="badge badge-bf">${esc(p.promo.label)}</span>`;
+    else if (p.badge) html += `<span class="badge badge-trial">${esc(p.badge)}</span>`;
     if (p.status === "coming-soon") html += '<span class="badge badge-soon">Coming soon</span>';
     return html;
   }
@@ -76,7 +84,7 @@
         <h3 class="card-title"><a href="${productUrl(p)}">${esc(p.name)}</a></h3>
         <p class="card-desc">${esc(p.description)}</p>
         <div class="card-foot">
-          <div class="price ${p.isFree ? "free" : ""}">${formatPrice(p)}${p.isFree && p.isAvailable ? "<small>pay what you want</small>" : ""}</div>
+          <div class="price ${p.isFree ? "free" : ""}">${priceHTML(p)}</div>
           <div class="card-actions">
             <a class="btn btn-ghost btn-sm" href="${productUrl(p)}">View plugin</a>
             ${actionButton(p, site)}
@@ -394,7 +402,8 @@
               ${p.tagline ? `<p class="product-tagline">${esc(p.tagline)}</p>` : ""}
               ${(p.longDescription && p.longDescription.length ? p.longDescription : [p.description]).map((t) => `<p class="product-desc">${esc(t)}</p>`).join("")}
               <div class="buy-box" id="buy-box">
-                <div class="price ${p.isFree ? "free" : ""}">${formatPrice(p)}${p.isFree && p.isAvailable ? "<small>pay what you want</small>" : ""}</div>
+                <div class="price ${p.isFree ? "free" : ""}">${priceHTML(p)}</div>
+                ${p.promo ? `<div class="promo-timer">Free for <b data-countdown="${esc(p.promo.end)}">--:--:--</b></div>` : ""}
                 ${cta}
                 ${p.isAvailable ? `<div class="secure">${ICONS.lock} Secure checkout & instant download on Gumroad</div>` : `<div class="secure">Not available yet — follow us on Instagram to know when it drops.</div>`}
                 ${sibling ? `<p class="alt">${sibling.isFree ? `Not sure yet? <a href="${productUrl(sibling)}">Try ${esc(sibling.name)} free</a>` : `Want everything? <a href="${productUrl(sibling)}">Get ${esc(sibling.name)}</a> · ${formatPrice(sibling)}`}</p>` : ""}
@@ -524,17 +533,90 @@
     document.head.appendChild(s);
   }
 
+  /* ---------- promociones (Black Friday, etc.) ---------- */
+  function promoBar(promo) {
+    if (!promo) return;
+    const bar = document.createElement("div");
+    bar.className = "promo-bar";
+    bar.innerHTML = `<div class="container promo-bar-in">
+        <span class="promo-tag">${esc(promo.label)}</span>
+        <span class="promo-msg">${esc(promo.title)}</span>
+        <span class="promo-count">Ends in <b data-countdown="${esc(promo.end)}">--:--:--</b></span>
+        <a class="promo-go" href="${page === "home" ? "#promo" : "index.html#promo"}">Get them free →</a>
+      </div>`;
+    const h = $("#site-header");
+    if (h) h.parentNode.insertBefore(bar, h); else document.body.prepend(bar);
+  }
+
+  function renderPromoSection(site, products, promo) {
+    const slot = $("#promo-slot");
+    if (!slot || !promo) return;
+    const items = products.filter((p) => p.promo);
+    if (!items.length) return;
+    const vv = products.find((p) => p.id === "velocivoice");
+    slot.innerHTML = `
+      <section class="section promo-zone" id="promo">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow"><b class="idx">${esc(promo.label.toUpperCase())}</b> Free for a limited time</span>
+              <h2 class="section-title">${esc(promo.title)}</h2>
+              <p class="section-sub">${esc(promo.text)}</p>
+            </div>
+            <div class="promo-big-count" aria-label="Time left">
+              <span>Ends in</span><b data-countdown="${esc(promo.end)}">--:--:--</b>
+            </div>
+          </div>
+          <div class="promo-grid">
+            ${items.map((p) => `
+            <article class="promo-card reveal" style="--accent:${esc(p.accent || "#b8ff2e")}">
+              <a class="promo-media" href="${productUrl(p)}"><img src="${esc(p.cover || p.image)}" alt="${esc(p.name)} interface" loading="lazy"></a>
+              <div class="promo-body">
+                <div class="chips">${badges(p)}<span class="badge">${esc(p.category)}</span></div>
+                <h3>${esc(p.name)}</h3>
+                <p>${esc(p.description)}</p>
+                <div class="price free">${priceHTML(p)}</div>
+                <div class="promo-actions">
+                  <a class="btn btn-primary" style="--c:${esc(p.accent || "#b8ff2e")}" href="${esc(buyUrl(p, site))}" target="_blank" rel="noopener">${ICONS.down} Free download</a>
+                  <a class="btn btn-ghost" href="${productUrl(p)}">View plugin</a>
+                </div>
+              </div>
+            </article>`).join("")}
+          </div>
+          ${vv && items.some((p) => p.id === "raptortune") ? `<p class="promo-upsell">Like RaptorTune? <a href="${productUrl(vv)}">VelociVoice</a> has it built in, plus compression, saturation, delay, reverb and 12 vocal presets · ${formatPrice(vv)}</p>` : ""}
+        </div>
+      </section>`;
+  }
+
+  function startCountdowns() {
+    const els = $$("[data-countdown]");
+    if (!els.length) return;
+    const pad = (n) => String(n).padStart(2, "0");
+    const tick = () => {
+      els.forEach((el) => {
+        const ms = Date.parse(el.dataset.countdown) - Date.now();
+        if (ms <= 0) { el.textContent = "ended"; return; }
+        const s = Math.floor(ms / 1000), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600);
+        el.textContent = (d ? d + "d " : "") + pad(h) + ":" + pad(Math.floor(s % 3600 / 60)) + ":" + pad(s % 60);
+      });
+    };
+    tick(); setInterval(tick, 1000);
+  }
+
   /* ---------- arranque ---------- */
-  PlugCatalog.load().then(({ site, products }) => {
+  PlugCatalog.load().then(({ site, products, promo }) => {
+    promoBar(promo);
     header(site);
     footer(site, products);
     if (page === "home") renderHome(site, products);
+    if (page === "home") renderPromoSection(site, products, promo);
     bindProductRefs(site, products);
     renderFaqBlocks(products);
     if (page === "catalog") renderCatalog(site, products);
     if (page === "free") renderFree(site, products);
     if (page === "product") renderProduct(site, products);
     reveal();
+    startCountdowns();
   }).catch((err) => {
     console.error(err);
     const target = $("main");

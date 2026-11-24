@@ -40,7 +40,7 @@
           if (g[f] === undefined || g[f] === null || g[f] === "") continue;
           // Un borrador de Gumroad no oculta un producto marcado como "coming-soon"
           if (f === "status" && g.status !== "published" && local.status !== "published") continue;
-          local[f] = g[f];
+          local[f] = typeof g[f] === "string" ? g[f].trim() : g[f];
         }
         if (fields.includes("price") && typeof g.price === "number") local.type = g.price > 0 ? "PREMIUM" : "FREE";
         if (!local.image && g.image) local.image = g.image;
@@ -77,6 +77,34 @@
     return result;
   }
 
+  // Promociones con fecha (site.json -> promos). Durante la ventana sobrescriben
+  // precio/estado de los productos indicados; fuera de ella no tocan nada.
+  // ?promo=<id> en la URL fuerza la vista previa.
+  function activePromo(site) {
+    const list = site.promos || [];
+    const forced = new URLSearchParams(location.search).get("promo");
+    const now = Date.now();
+    return list.find((pr) => pr.id === forced) ||
+      list.find((pr) => now >= Date.parse(pr.start) && now < Date.parse(pr.end)) || null;
+  }
+  function applyPromo(products, promo) {
+    if (!promo) return products;
+    const order = Object.keys(promo.products || {});
+    return products.map((p) => {
+      const o = promo.products[p.id];
+      if (!o) return p;
+      const q = Object.assign({}, p);
+      q.regularPrice = p.price;
+      Object.assign(q, o);
+      q.type = q.price > 0 ? "PREMIUM" : "FREE";
+      q.status = "published";
+      q.featured = true;
+      q.order = -100 + order.indexOf(p.id);
+      q.promo = { id: promo.id, label: promo.label, end: promo.end };
+      return q;
+    });
+  }
+
   async function load() {
     const [site, data] = await Promise.all([getJSON("data/site.json"), getJSON("data/products.json")]);
     let products = (data.products || []).map((p) => Object.assign({}, p));
@@ -85,6 +113,8 @@
       const sync = await getJSON(syncCfg.file || "data/gumroad-sync.json", true);
       products = mergeSync(products, sync, syncCfg);
     }
+    const promo = activePromo(site);
+    products = applyPromo(products, promo);
     // Normaliza
     products = products
       .filter((p) => p && p.id && p.status !== "hidden" && p.status !== "draft")
@@ -99,7 +129,7 @@
         return p;
       })
       .sort((a, b) => (a.order ?? 50) - (b.order ?? 50));
-    return { site, products };
+    return { site, products, promo };
   }
 
   window.PlugCatalog = { load, slugify };

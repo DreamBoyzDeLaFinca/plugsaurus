@@ -711,3 +711,44 @@ h1, h2, h3, h4 { font-weight: 400; letter-spacing: 0; }
 main { overflow-x: clip; }
 .nav-links a { white-space: nowrap; }
 @media (min-width: 861px) and (max-width: 1100px) { .nav-links a { padding: 8px 10px; } .nav-cta .hide-sm { display: none; } }
+
+/* =========================================================
+   PROMOCIONES CON FECHA (Black Friday)
+   ========================================================= */
+.promo-bar { background: var(--lime); color: #041004; position: relative; z-index: 60; }
+.promo-bar-in { display: flex; align-items: center; justify-content: center; gap: 10px 18px; flex-wrap: wrap; padding: 9px 0; font-family: var(--font-mono); font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-align: center; }
+.promo-tag { background: #041004; color: var(--lime); padding: 3px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: .12em; }
+.promo-msg { text-transform: uppercase; }
+.promo-count b { font-variant-numeric: tabular-nums; background: rgba(4,16,4,.12); padding: 2px 6px; border-radius: 3px; }
+.promo-go { color: #041004; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) { .promo-bar-in { font-size: .7rem; gap: 6px 10px; } .promo-msg { flex-basis: 100%; order: -1; } }
+
+.badge-bf { background: #041004; color: var(--lime); border-color: var(--lime); }
+.price .was { font-size: .62em; color: var(--dim); font-weight: 500; text-decoration-thickness: 2px; }
+.promo-timer { font-family: var(--font-mono); font-size: .82rem; color: var(--lime); }
+.promo-timer b { font-variant-numeric: tabular-nums; }
+
+.promo-zone { background: linear-gradient(180deg, #0b1407, #070807); border-block: 1px solid rgba(184,255,46,.25); overflow: hidden; }
+.promo-zone::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; background: repeating-linear-gradient(-45deg, var(--lime) 0 14px, #070807 14px 28px); }
+.promo-zone .container { position: relative; }
+.promo-big-count { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-family: var(--font-mono); }
+.promo-big-count span { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.promo-big-count b { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--lime); font-variant-numeric: tabular-nums; line-height: 1; text-shadow: 0 0 30px rgba(184,255,46,.35); }
+.promo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.promo-card { display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); background: var(--surface); transition: transform .3s var(--ease), box-shadow .3s; }
+.promo-card:hover { transform: translateY(-4px); box-shadow: 0 30px 70px -30px color-mix(in srgb, var(--accent) 60%, transparent); }
+.promo-media { display: block; aspect-ratio: 16 / 9; background: #000; }
+.promo-media img { width: 100%; height: 100%; object-fit: cover; }
+.promo-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.promo-body h3 { font-size: clamp(1.4rem, 2.6vw, 2rem); text-transform: uppercase; }
+.promo-body p { color: var(--muted); }
+.promo-body .price { font-size: 1.8rem; }
+.promo-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.promo-upsell { margin-top: 24px; text-align: center; color: var(--muted); }
+.promo-upsell a { color: var(--lime); font-weight: 700; }
+@media (max-width: 860px) {
+  .promo-grid { grid-template-columns: 1fr; }
+  .promo-big-count { align-items: flex-start; }
+  .promo-body { padding: 20px; }
+  .promo-actions .btn { flex: 1 1 100%; }
+}
