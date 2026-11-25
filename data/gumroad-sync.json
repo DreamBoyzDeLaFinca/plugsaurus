@@ -1,6 +1,6 @@
 {
   "_info": "Generado automaticamente por tools/sync_gumroad.py. No editar a mano.",
-  "updatedAt": "2026-11-24T06:58:10+00:00",
+  "updatedAt": "2026-11-25T07:00:14+00:00",
   "products": [
     {
       "gumroadId": "GnzeSy14WmHdtZcIlXAMFw==",
@@ -9,7 +9,7 @@
       "description": "Turn up the DRY / WET and watch the pterosaur spread its wings.",
       "price": 0.0,
       "currency": "EUR",
-      "status": "draft",
+      "status": "published",
       "gumroadUrl": "https://dreamboyz.gumroad.com/l/pteroverb",
       "image": "https://public-files.gumroad.com/8wxdpa0vp4zm232abb33r7yyp9kq"
     },
@@ -20,7 +20,7 @@
       "description": "Hear it on your own voice before you buy.",
       "price": 0.0,
       "currency": "USD",
-      "status": "draft",
+      "status": "published",
       "gumroadUrl": "https://dreamboyz.gumroad.com/l/raptortune-lite",
       "image": "https://public-files.gumroad.com/37ux964qee1z6zihi78uvn8bodgr"
     },
@@ -31,7 +31,7 @@
       "description": "That hard trap tune. One wheel.",
       "price": 7.99,
       "currency": "USD",
-      "status": "draft",
+      "status": "published",
       "gumroadUrl": "https://dreamboyz.gumroad.com/l/raptortune",
       "image": "https://public-files.gumroad.com/ilpwnnulw7d8qwtahqhkxlieni0b"
     },
