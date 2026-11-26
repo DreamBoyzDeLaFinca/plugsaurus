@@ -580,6 +580,69 @@
       "featured": false,
       "accent": "#29e3ff",
       "order": 13
+    },
+    {
+      "id": "dilomaster",
+      "name": "DiloMaster",
+      "tagline": "Make your mix hit bigger. One knob.",
+      "description": "One-knob master-bus plugin: punch, body, width and loudness with a built-in clipper and true-peak limiter.",
+      "longDescription": [
+        "DiloMaster goes on your master bus. Turn DILO POWER and it pushes your mix louder, punchier and wider, while the clipper and true-peak limiter keep it clean, with no overs.",
+        "Shape it with Punch, Body, Clarity, Width and the TONE EQ, then hit MATCH to hear what changed at the same loudness."
+      ],
+      "price": 7.99,
+      "currency": "USD",
+      "type": "PREMIUM",
+      "category": "Mastering",
+      "image": "assets/img/products/dilomaster-thumb.webp",
+      "cover": "assets/img/products/dilomaster-cover.webp",
+      "gallery": [
+        "assets/img/products/dilomaster-cover.webp",
+        "assets/img/products/dilomaster-ui.webp"
+      ],
+      "videos": [],
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/dilomaster",
+      "gumroadPermalink": "dilomaster",
+      "compatibility": {
+        "os": [
+          "Windows 10/11 (64-bit)",
+          "macOS 10.13 or later (Intel & Apple Silicon)"
+        ],
+        "formats": [
+          "VST3",
+          "AU (Mac)"
+        ],
+        "daws": [
+          "Ableton Live",
+          "FL Studio",
+          "Logic Pro",
+          "GarageBand",
+          "Cubase",
+          "Studio One",
+          "Reaper",
+          "Bitwig"
+        ]
+      },
+      "features": [
+        "DILO POWER: one big knob for loudness and impact",
+        "CHARACTER: Punch, Body, Clarity and Width",
+        "TONE: Low, Mid and High EQ (±6 dB)",
+        "Multiband compression, saturation and transient punch",
+        "Clipper + true-peak limiter (ceiling -0.3 dBFS)",
+        "Mono-safe width: the low end stays centered",
+        "MATCH: compare before and after at the same loudness",
+        "A/B slots, bypass and up to 4x oversampling",
+        "Animated storm interface that reacts to your music"
+      ],
+      "license": "Download and use. No license key needed.",
+      "notes": [
+        "Mac: the installer is not notarized yet. If macOS blocks it, go to System Settings → Privacy & Security → Open Anyway."
+      ],
+      "freeVersion": null,
+      "status": "coming-soon",
+      "featured": false,
+      "accent": "#c77dff",
+      "order": 5
     }
   ]
 }

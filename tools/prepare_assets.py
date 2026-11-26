@@ -16,6 +16,7 @@ RT = CLAUDE / "Marketing_RaptorTune" / "imagenes"
 SB = CLAUDE / "Marketing_Gumroad"
 SP = CLAUDE / "Marketing_STOMPOSAURUS"
 PV = DESK / "PLUGSAURUS" / "PTEROVERB"
+DM = CLAUDE / "Marketing_DiloMaster" / "imagenes"
 
 IMAGES = {
     # destino: (origen, ancho maximo)
@@ -42,6 +43,9 @@ IMAGES = {
     "pteroverb-cover": (PV / "Gumroad" / "PTEROVERB_Gumroad_portada.png", 1280),
     "pteroverb-thumb": (PV / "Gumroad" / "PTEROVERB_Gumroad_miniatura.png", 600),
     "pteroverb-ui": (PV / "PTEROVERB_interfaz.png", 1100),
+    "dilomaster-cover": (DM / "dm_gumroad_cover_1920x1080.png", 1600),
+    "dilomaster-thumb": (DM / "dm_gumroad_thumb_1200x1200.png", 720),
+    "dilomaster-ui": (DM / "dilomaster_interface_2240x1400.png", 1600),
 }
 
 # Reels antes/despues de VelociVoice (1080x1920): se reducen a 720x1280 para la web

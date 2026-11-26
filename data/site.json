@@ -39,12 +39,18 @@
       "label": "Black Friday",
       "start": "2026-11-27T00:00:00+01:00",
       "end": "2026-12-01T00:00:00+01:00",
-      "title": "RaptorTune & PTEROVERB are free",
-      "text": "Black Friday weekend only, November 27–30. Download both plugins free on Gumroad before the timer hits zero.",
+      "title": "RaptorTune, DiloMaster & PTEROVERB are free",
+      "text": "Black Friday weekend only, November 27–30. Download all three plugins free on Gumroad before the timer hits zero.",
       "products": {
         "raptortune": {
           "price": 0,
           "regularPrice": 7.99
+        },
+        "dilomaster": {
+          "_info": "En Gumroad sigue a $7.99: el enlace aplica el codigo DILOFREE (100 %) automaticamente",
+          "price": 0,
+          "regularPrice": 7.99,
+          "gumroadUrl": "https://dreamboyz.gumroad.com/l/dilomaster/DILOFREE"
         },
         "pteroverb": {
           "price": 0
