@@ -1,7 +1,18 @@
 {
   "_info": "Generado automaticamente por tools/sync_gumroad.py. No editar a mano.",
-  "updatedAt": "2026-11-25T07:00:14+00:00",
+  "updatedAt": "2026-11-26T01:13:32+00:00",
   "products": [
+    {
+      "gumroadId": "HeepGJmotvK3L2MMVxXosg==",
+      "gumroadPermalink": "dilomaster",
+      "name": "DiloMaster",
+      "description": "Make your mix hit bigger. One knob.",
+      "price": 7.99,
+      "currency": "EUR",
+      "status": "published",
+      "gumroadUrl": "https://dreamboyz.gumroad.com/l/dilomaster",
+      "image": "https://public-files.gumroad.com/t3bld3u3g0p8fwwuidpsdfree3h6"
+    },
     {
       "gumroadId": "GnzeSy14WmHdtZcIlXAMFw==",
       "gumroadPermalink": "pteroverb",
